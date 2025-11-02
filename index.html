@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Engineering Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond&display=swap" rel="stylesheet">
+  <style>
+    /* === NOUVELLE-CLONE: ART NOUVEAU ELEGANCE === */
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'EB Garamond', serif;
+      background: #f8f4e6;
+      color: #4a3c31;
+      line-height: 1.8;
+    }
+    .container { 
+      max-width: 800px; 
+      margin: 0 auto; 
+      padding: 2rem; 
+      background: rgba(255,255,255,0.8);
+    }
+
+    /* Header: Flowing Nouveau Banner */
+    .site-header {
+      background: linear-gradient(45deg, #e8d5b7, #c9b89a);
+      padding: 4rem 1rem 3rem;
+      text-align: center;
+      border-bottom: 3px solid #d4af37;
+      position: relative;
+      overflow: hidden;
+    }
+    .site-header::before {
+      content: "🌿✦🌿";
+      position: absolute;
+      font-size: 3rem;
+      top: 10px; left: 50%; transform: translateX(-50%);
+      opacity: 0.3;
+      font-family: 'Cinzel', serif;
+    }
+    .site-title {
+      font-family: 'Cinzel', serif;
+      font-size: 3.5rem;
+      color: #4a3c31;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+      position: relative;
+      z-index: 2;
+    }
+    .site-description { 
+      color: #7a6a5a; 
+      font-style: italic; 
+      font-size: 1.2rem; 
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Posts: Curved, Bordered Cards */
+    .post {
+      background: #fff;
+      margin: 3rem 0;
+      padding: 2.5rem;
+      border: 2px solid #d4af37;
+      border-radius: 20px 5px 20px 5px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .post::before {
+      content: "";
+      position: absolute;
+      top: -10px; left: 20px;
+      width: 40px; height: 5px;
+      background: #d4af37;
+      border-radius: 50%;
+      transform: rotate(-5deg);
+    }
+    .post-title { 
+      font-family: 'Cinzel', serif;
+      color: #4a3c31;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+    }
+    .post-meta { 
+      color: #7a6a5a; 
+      font-size: 0.95rem; 
+      margin-bottom: 1.5rem;
+      border-bottom: 1px dashed #c9b89a;
+      padding-bottom: 0.5rem;
+    }
+    .post-content img { 
+      max-width: 100%; 
+      border-radius: 10px; 
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 12px rgba(212,175,55,0.2);
+    }
+    a { 
+      color: #d4af37; 
+      text-decoration: none; 
+      font-weight: 600;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.3s;
+    }
+    a:hover { border-bottom: 1px solid #d4af37; }
+
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      padding: 2rem;
+      color: #7a6a5a;
+      font-size: 0.9rem;
+      border-top: 1px solid #c9b89a;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) { 
+      .site-title { font-size: 2.5rem; } 
+      .post { padding: 1.5rem; margin: 2rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <!-- Victorian Blue Fish in Alphonse Mucha Style (SVG) -->
+    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 20%; left: 10%; width: 80%; height: 60%; opacity: 0.6; z-index: 1;">
+      <!-- Fish Body (curved, organic Mucha line) -->
+      <path d="M100 100 Q50 50 100 0 Q150 50 100 100 Q150 150 100 200 Q50 150 100 100" fill="#A7C7E7" stroke="#4A90E2" stroke-width="2" opacity="0.8"/>
+      <!-- Eye (pearl-like) -->
+      <circle cx="120" cy="80" r="10" fill="white" stroke="#4A90E2" stroke-width="1"/>
+      <circle cx="125" cy="75" r="3" fill="#4A90E2"/>
+      <!-- Fins (flowing, vine-like) -->
+      <path d="M100 100 Q80 120 60 100 Q80 80 100 100" fill="#87CEEB" stroke="#4A90E2" stroke-width="1.5"/>
+      <path d="M100 100 Q120 130 140 110 Q120 90 100 100" fill="#87CEEB" stroke="#4A90E2" stroke-width="1.5"/>
+      <!-- Tail (swirling Mucha flourish) -->
+      <path d="M50 100 Q20 70 40 100 Q20 130 50 100" fill="#A7C7E7" stroke="#4A90E2" stroke-width="2"/>
+      <!-- Halo of Lilies & Vines (Mucha motif) -->
+      <path d="M200 50 Q220 30 240 50 Q220 70 200 50" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.7"/>
+      <path d="M200 150 Q220 170 240 150 Q220 130 200 150" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.7"/>
+      <circle cx="220" cy="50" r="5" fill="#D4AF37" opacity="0.7"/>
+      <circle cx="220" cy="150" r="5" fill="#D4AF37" opacity="0.7"/>
+      <!-- Floral accents -->
+      <path d="M180 80 Q190 70 200 80 Q190 90 180 80" fill="#FFD700" stroke="#D4AF37" stroke-width="0.5"/>
+    </svg>
+
+    <h1 class="site-title">Library Engineering Lab</h1>
+    <p class="site-description">Victorian Innovation • Cardboard Chaos • Teen Makers</p>
+  </header>
+
+  <div class="container">
+
+    <!-- POST 1: TIN-CAN TALKIE -->
+    <article class="post">
+      <h2 class="post-title">Tin-Can Talkie: 1930s Sound Machine</h2>
+      <div class="post-meta">November 1, 2025</div>
+      <div class="post-content">
+        <p>We built an <strong>optical sound recorder</strong> from tape and Sharpies. Draw your voice as waves, shine light through it, and a phone mic plays it back!</p>
+        <img src="https://via.placeholder.com/600x400?text=Tin+Can+Talkie" alt="Tin can setup">
+        <p><strong>Materials:</strong> Clear tape, Sharpie, cardboard ($0).</p>
+        <p><strong>Fail Moment:</strong> One team's jellyfish voice sounded like a dial-up modem. Epic.</p>
+        <a href="posts/tin-can.html">Full Build Log →</a>
+      </div>
+    </article>
+
+    <!-- POST 2: PASTEL JELLY -->
+    <article class="post">
+      <h2 class="post-title">Pastel Moon Jelly Pop-Up</h2>
+      <div class="post-meta">October 25, 2025</div>
+      <div class="post-content">
+        <p>Victorian-style sea creature books, but <strong>3D</strong>. Teens drew pastel jellies and added pull-tabs for swimming action.</p>
+        <img src="https://via.placeholder.com/600x400?text=Pastel+Jelly" alt="Jellyfish pop-up">
+        <a href="posts/jelly.html">See the Glow-Up →</a>
+      </div>
+    </article>
+
+  </div>
+
+  <footer class="site-footer">
+    © 2025 Library Engineering Lab | <a href="https://github.com/morrowinmotion/morrowinmotion.github.io">Edit on GitHub</a>
+  </footer>
+</body>
+</html>
