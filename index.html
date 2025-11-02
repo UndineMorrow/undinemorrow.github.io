@@ -6,116 +6,115 @@
   <title>Library Engineering Lab</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* === TRUE NOUVELLE: ART NOUVEAU DARK ELEGANCE === */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #0f1a1e url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50 10 Q30 30 50 50 Q70 70 50 90 Q30 70 50 50 Q30 30 10 50 Q30 70 50 50" fill="none" stroke="%232d3b3f" stroke-width="1" opacity="0.3"/></svg>') repeat;
+      background: #0a1a2e;
       color: #e6d5b8;
       font-family: 'Cormorant Garamond', serif;
       line-height: 1.8;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
+      text-align: center;
     }
 
-    /* Header: Ornate Brass Plate */
-    .site-header {
-      background: linear-gradient(135deg, #1a2a2e, #0f1a1e);
-      border: 4px double #b8860b;
-      border-radius: 15px 5px 15px 5px;
-      padding: 3rem 2rem;
-      text-align: center;
+    /* === HEADER: FULL NOUVELLE POSTER === */
+    .header-poster {
+      background: #0a1a2e;
+      padding: 2rem 1rem;
       position: relative;
-      margin-bottom: 3rem;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
       overflow: hidden;
     }
-    .site-header::before {
-      content: "✤ ✤ ✤";
-      position: absolute;
-      top: 10px; left: 50%; transform: translateX(-50%);
-      font-size: 1.8rem;
+    .nav-top {
+      font-size: 1rem;
       color: #b8860b;
-      letter-spacing: 1.5rem;
-      opacity: 0.4;
-    }
-    .site-title {
-      font-family: 'Cinzel Decorative', cursive;
-      font-size: 3.8rem;
-      color: #d4af37;
-      text-shadow: 2px 2px 4px #000;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.3em;
       margin-bottom: 0.5rem;
+      font-family: 'Cinzel Decorative', cursive;
     }
-    .site-description {
-      color: #b8860b;
-      font-style: italic;
-      font-size: 1.3rem;
-      letter-spacing: 0.05em;
+    .nav-links {
+      font-size: 0.9rem;
+      color: #d4af37;
+      margin-bottom: 1.5rem;
+    }
+    .nav-links a {
+      color: #d4af37;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+      border-bottom: 1px dotted #b8860b;
+    }
+    .nav-links a:hover { color: #ffd700; }
+
+    .art-circle {
+      width: 380px;
+      height: 380px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 8px double #b8860b;
+      box-shadow: 0 0 30px rgba(184, 134, 11, 0.4);
+    }
+    .art-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    /* Posts: Brass-Framed Scrolls */
-    .post {
-      background: rgba(15, 26, 30, 0.85);
-      border: 2px solid #b8860b;
-      border-radius: 12px 3px 12px 3px;
-      margin: 3rem 0;
-      padding: 2.5rem;
-      position: relative;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    .main-title {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 3.2rem;
+      color: #ffffff;
+      text-shadow: 3px 3px 6px #000;
+      letter-spacing: 0.05em;
+      margin: 1rem 0;
+      line-height: 1.2;
     }
-    .post::before {
-      content: "";
-      position: absolute;
-      top: -8px; left: 15px;
-      width: 50px; height: 8px;
-      background: #b8860b;
-      border-radius: 50%;
-      transform: rotate(-8deg);
+    .subtitle {
+      font-size: 1.1rem;
+      color: #b8860b;
+      font-style: italic;
+      margin-bottom: 3rem;
+    }
+
+    /* === POSTS === */
+    .container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .post {
+      background: rgba(10, 26, 46, 0.9);
+      border: 2px solid #b8860b;
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
     }
     .post-title {
       font-family: 'Cinzel Decorative', cursive;
       color: #d4af37;
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin-bottom: 0.8rem;
-      letter-spacing: 0.03em;
     }
     .post-meta {
       color: #8b7a5a;
-      font-size: 0.95rem;
-      margin-bottom: 1.2rem;
-      border-bottom: 1px dashed #b8860b;
-      padding-bottom: 0.5rem;
-    }
-    .post-content p {
+      font-size: 0.9rem;
       margin-bottom: 1rem;
-      text-align: justify;
     }
-    .post-content img {
+    .post img {
       max-width: 100%;
       border: 3px double #b8860b;
-      border-radius: 8px;
+      border-radius: 10px;
       margin: 1.5rem 0;
-      box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
     }
     a {
       color: #d4af37;
       text-decoration: none;
-      font-weight: 600;
       border-bottom: 1px dotted #b8860b;
-      transition: all 0.3s;
     }
-    a:hover {
-      color: #ffd700;
-      border-bottom: 1px solid #ffd700;
-    }
+    a:hover { color: #ffd700; border-color: #ffd700; }
 
-    /* Footer */
+    /* === FOOTER === */
     .site-footer {
-      text-align: center;
-      padding: 2.5rem;
+      padding: 3rem 1rem;
       color: #8b7a5a;
       font-size: 0.9rem;
       border-top: 2px double #b8860b;
@@ -123,15 +122,28 @@
     }
 
     @media (max-width: 768px) {
-      .site-title { font-size: 2.8rem; }
-      .post { padding: 1.8rem; }
+      .main-title { font-size: 2.5rem; }
+      .art-circle { width: 300px; height: 300px; }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <h1 class="site-title">Library Engineering Lab</h1>
-    <p class="site-description">Victorian Mechanisms • Cardboard Alchemy • Teen Inventors</p>
+
+  <!-- HEADER POSTER -->
+  <header class="header-poster">
+    <div class="nav-top">NOUVELLE</div>
+    <div class="nav-links">
+      <a href="#">Epic</a>
+      <a href="#">Essays</a>
+      <a href="#">About</a>
+    </div>
+
+    <div class="art-circle">
+      <img src="https://via.placeholder.com/380x380/1a2a3e/cccccc?text=Mucha+Mermaid" alt="Mucha Mermaid Art">
+    </div>
+
+    <h1 class="main-title">THE SLAV EPIC:<br>A CHRONICLE<br>OF MY PEOPLE</h1>
+    <p class="subtitle">Twenty canvases, twenty stories. Not history alone, but memory in paint: the dream of a nation.</p>
   </header>
 
   <div class="container">
@@ -142,10 +154,8 @@
       <div class="post-meta">1 November 2025</div>
       <div class="post-content">
         <p>An optical sound recorder built from tin cans, tape, and Sharpie ink. Light passes through hand-drawn waveforms; a phone microphone captures the voice reborn as vibration.</p>
-        <img src="https://via.placeholder.com/700x400?text=Tin+Can+Talkie+%E2%9A%99%EF%B8%8F" alt="Tin Can Talkie">
-        <p><strong>Materials:</strong> Tin can, clear tape, black marker, cardboard. Cost: $0.</p>
-        <p><strong>Notable Failure:</strong> One recording sounded like a steam whistle in distress. We kept it.</p>
-        <a href="posts/tin-can.html">Read the Full Mechanism →</a>
+        <img src="https://via.placeholder.com/700x400?text=Tin+Can+Talkie" alt="Tin Can Talkie">
+        <p><a href="posts/tin-can.html">Read the Full Mechanism →</a></p>
       </div>
     </article>
 
@@ -155,8 +165,8 @@
       <div class="post-meta">25 October 2025</div>
       <div class="post-content">
         <p>A pop-up book of bioluminescent jellies, engineered with pull-tabs and layered card. Each tentacle moves like a living specimen under paper seas.</p>
-        <img src="https://via.placeholder.com/700x400?text=Moon+Jelly+Glow" alt="Pastel Moon Jelly">
-        <a href="posts/jelly.html">See the Mechanism in Motion →</a>
+        <img src="https://via.placeholder.com/700x400?text=Moon+Jelly" alt="Moon Jelly">
+        <p><a href="posts/jelly.html">See the Mechanism in Motion →</a></p>
       </div>
     </article>
 
@@ -165,5 +175,6 @@
   <footer class="site-footer">
     © 2025 Library Engineering Lab | <a href="https://github.com/UndineMorrow/undinemorrow.github.io">Edit on GitHub</a>
   </footer>
+
 </body>
 </html>
